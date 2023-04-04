@@ -11,14 +11,28 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
     />
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
     <link rel="stylesheet" href="website.css">
     <title>contact page</title>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("PzvHBpDEyoTgv23gs");
+   })();
+</script>
+
 </head>
  <body>
     <header>
-        
         <div class="main-nav">
-            <img src="images/Own logo.png" style="width: 155px;height: 160px;">
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
+            </label>
+            <label class="logo">LybzTechServices</label>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
@@ -38,7 +52,7 @@
              If you have any questions, comments, or concerns, please do not hesitate to contact us.
               We are always ready to assist you in any way we can.</p>
               <p>
-                For any  inquiries, please contact us at info@lybztechservices.com,carebmunene3@gmail.com or whatsapp number 0740630349. Our customer 
+                For any  inquiries, please contact us at lybztechservices@gmail.com or whatsapp number 0740630349. Our customer 
                 service team will be happy to assist you and address any concerns you may have.
                 Our team of experts will provide you with prompt and efficient resolutions to any technical issues you may be experiencing.            
                 Fill the form below to share your thought.
@@ -48,31 +62,31 @@
          <form>
             <div class="row">
                 <div class="input50">
-                    <input type="text" placeholder="First Name">
+                    <input type="text" id="First Name" placeholder="First Name">
                 </div>
                 <div class="input50">
-                <input type="text" placeholder="Last Name">
+                <input type="text" id="Last Name" placeholder="Last Name">
                 </div>
             </div>
 
             <div class="row">
                 <div class="input50">
-                    <input type="email" placeholder="Email">
+                    <input type="email" id="email" placeholder="Email">
                 </div>
                 <div class="input50">
-                <input type="text" placeholder="Subject">
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="input100">
-                    <textarea placeholder="Message"></textarea>
+                <input type="text" id="subject" placeholder="Subject">
                 </div>
             </div>
 
             <div class="row">
                 <div class="input100">
-                    <input type="submit" value="Send"></input>
+                    <textarea id="message" placeholder="Message"></textarea>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input100">
+                    <input type="button" onclick="sendMail()" value="Send"></input>
                 </div>
             </div>
          </form>
@@ -86,7 +100,7 @@
     <div class="footer">
         Lybz Tech Services © 2023, All Rights Reserved. | Privacy Policy | Terms of Service | Contact Us
         Address: 1234 Kijambe Street, Tower House, Nairobi, Kenya 12345 | Phone: 254+(740) 630-349 | 
-        Email: info@lybztechservices.com | carebmunene3@gmail.com
+        Email: lybztechservices@gmail.com
         Follow Us: Facebook | Twitter | LinkedIn | WhatsApp
         At Lybz Tech Services, we provide innovative technology solutions to help businesses succeed. Our team of experts is dedicated to delivering exceptional service and support. 
         Contact us today to learn how we can help your business grow.
@@ -99,6 +113,7 @@
             </ul>
         
     </div>
-    
+   
   </body>
+  
 </html>

@@ -11,16 +11,17 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: sans-serif;
-    font-size: 1.3rem;
+    font-size: 12pt;
     min-height: 100vh;
     line-height: 1.6;
+    height: calc(100vh - 80px);
 }
 /*utility*/
 .container{
     padding: 0 5%;
+    margin-top: 30px;
 }
 a{
     color: var(--color-white);
@@ -56,22 +57,16 @@ video{
     height: 140%;
 }
 /*header*/
-header {
-    height: 27vh;
-    display: flex;
-}
 .main-nav {
     width: 100%;
+    height: 100px;
     background-color: var(--primary-color);
-    padding-left: 0%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: #fff;
-    letter-spacing: 2px;
-    padding: 20px;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    position: sticky;
+}
+.main-nav li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
 }
 .main-nav a:hover{
         background-color: red;
@@ -79,28 +74,37 @@ header {
         letter-spacing: 2px;
         text-transform: uppercase;
     }
-.main-nav ul,
-.sub-nav ul{
+.main-nav ul{
     list-style: none;
     display: flex;
+    float: right;
+    margin-right: 20px;
 }
 .main-nav ul li a{
-    text-transform: capitalize;
-    padding-right: 2rem;
+    border-radius: 3px;
+    padding: 7px 13px;
+    color: white;
+    font-size: 17px;
+    text-transform: uppercase;
 }
-.logo{
-    font-size: 1.5rem;
+.checkbtn{
+    font-size: 30px;
+    color: white;
+    float:right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
 }
-.sub-nav{
-    width: 30%;
-    padding-right: 5%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+#check{
+    display: none;
 }
-.sub-nav ul li a{
-    color: var(--primary-color);
-    padding-left: 1.5rem;
+
+label.logo{
+    color: white;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
 }
 .hero{
     height: calc(100vh-10vh);
@@ -114,13 +118,7 @@ header {
     align-items: flex-start;
     justify-content: center;
     padding-right: 1rem;
-}
-.hero-img{
-    flex: 0 0 50%;
-}
-.hero-img img{
-    width: 100%;
-    height: 100%;
+    margin-top: 100px;
 }
 .footer{
     padding: 50px;
@@ -129,7 +127,6 @@ header {
     width: 100%;
     color: #fff;
     list-style: none;
-   
 }
 /*services*/
 .description{
@@ -138,7 +135,6 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
-
 }
 .cards{
     display: grid;
@@ -151,7 +147,7 @@ header {
     margin-bottom: 2rem;
 }
 .card .icon img{
-    width: 7rem;
+    width: 15rem;
     height: auto;
     margin-bottom: 3rem;
 }
@@ -168,7 +164,7 @@ header {
 .contact-form form {
     width: 80%;
 }
-.contact-form.row {
+.contact-form .row {
     width: 100%;
     display: flex;
 }
@@ -176,12 +172,12 @@ header {
     width: 50%;
     margin: 0 10px;
 }
-.input100{
+.input100 {
     width: 100%;
     margin: 0 10px;
 }
-.contact-form.row input,
-.contact-form.row textarea{
+.contact-form .row input,
+.contact-form .row textarea{
     font-size: 1.2rem;
     font-weight: 300;
     width: 100%;
@@ -192,15 +188,16 @@ header {
     margin: 10px 0;
 }
 
-.contact-form.row textarea{
+.contact-form .row textarea{
     height: 150px;
 }
-.contact-form.row input[type="submit"]{
+.contact-form .row input[type="button"]{
     background-color: var(--primary-color);
     border: 0;
     cursor: pointer;
+    color: white;
 }
-@media(max-width:950px){
+@media(max-width:952px){
     .hero-img,
     .sub-nav{
         display: none;
@@ -208,8 +205,15 @@ header {
     .content{
         flex: 0 0 100%;
     }
+    label.logo{
+        font-size: 30px;
+        padding-left: 50px;
+    }
     .main-nav{
         width: 100%;
+    }
+    .main-nav ul li a{
+        font-size: 16px;
     }
     .contact-form form{
         width: 100%;
@@ -222,3 +226,28 @@ header {
         width: 100%;
     }
 }
+@media(max-width: 858px){
+    .checkbtn{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+        top:80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    main-nav ul li{
+       display: block;
+    }
+    main-nav ul li a{
+        font-size: 20px;
+    }
+    #check:checked ~ ul{
+        left: 0;
+    }
+}
+
